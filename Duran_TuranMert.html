@@ -1,0 +1,55 @@
+<html>
+
+<body>
+
+  <script>
+        // initialized ass. array
+    var phoneList = { "Turan": 123, "Veli": 542, "Mustafa": 3 }; 
+    // get value of given key
+    document.write(phoneList["Turan"]);
+    document.write('-----');
+
+    //add a new element
+    phoneList["Mehmet"] = 44444;
+    document.write(phoneList["Mehmet"]);
+
+    // remove an element
+    delete phoneList["Mustafa"]; 
+
+    //modify value of existing item
+    document.write('-----');
+    phoneList["Veli"] = 231453;
+    document.write(phoneList["Veli"]);
+
+    //Search for existance of key
+    document.write('-----');
+    document.write(phoneList.hasOwnProperty("Veli"));
+
+    //Search for existance of value
+    document.write('-----');
+    function findNumber(no) {
+        for (var key in phoneList) {
+            if (phoneList[key] == no) return key;
+        }
+     return false;
+    }
+    document.write(findNumber(231453));
+
+    //Prints function key-value pair with function
+    document.write('-----');
+    function foo() {
+        for (var key in phoneList) {
+            document.write(key);
+            document.write(":");
+            document.write(phoneList[key]);
+            document.write("--");
+        }
+     return false;
+    }
+    foo();
+
+  </script>
+
+</body>
+
+</html>
